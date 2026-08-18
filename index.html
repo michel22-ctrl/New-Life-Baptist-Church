@@ -7,246 +7,537 @@
     <title>New Life Baptist Church</title>
 
     <style>
-        /* =========================
-           GLOBAL
-        ========================== */
+       /* =========================
+   GLOBAL
+========================== */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        :root {
-            --cream: #f8f3e8;
-            --cream-dark: #eee5d4;
-            --teal: #2b7a78;
-            --green: #6dd5b8;
-            --dark: #173b3a;
-            --white: #ffffff;
-            --text: #304b49;
-            --shadow: 0 8px 25px rgba(43, 122, 120, 0.12);
-        }
+:root {
+    --cream: #f8f3e8;
+    --cream-dark: #eee5d4;
+    --teal: #2b7a78;
+    --green: #6dd5b8;
+    --dark: #173b3a;
+    --white: #ffffff;
+    --text: #304b49;
+    --shadow: 0 8px 25px rgba(43, 122, 120, 0.12);
+}
 
-        body {
-            font-family: "Times New Roman", Times, serif;
-            background: var(--cream);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+body {
+    font-family: "Times New Roman", Times, serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        section {
-            padding: 90px 8%;
-        }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+section {
+    padding: clamp(60px, 8vw, 100px) clamp(5%, 8vw, 10%);
+}
 
-        .section-title h2 {
-            font-size: 42px;
-            color: var(--teal);
-            margin-bottom: 10px;
-        }
+.section-title {
+    text-align: center;
+    margin-bottom: clamp(35px, 5vw, 55px);
+}
 
-        .section-title p {
-            max-width: 650px;
-            margin: auto;
-            color: #607572;
-            font-size: 18px;
-        }
+.section-title h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    color: var(--teal);
+    margin-bottom: 10px;
+}
 
-
-        /* =========================
-           NAVIGATION
-        ========================== */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(253, 252, 251, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-        }
-
-        .navbar {
-            width: 100%;
-            min-height: 78px;
-            padding: 0 8%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--teal);
-            color: var(--white);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 25px;
-        }
-
-        .logo-text h1 {
-            color: var(--teal);
-            font-size: 22px;
-            margin-bottom: -10px;
-        }
-
-        .logo-text span {
-            color: #64817d;
-            font-size: 13px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            font-size: 17px;
-            font-weight: bold;
-            position: relative;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--teal);
-        }
-
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 2px;
-            left: 0;
-            bottom: -5px;
-            background: var(--green);
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .menu-btn {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-            color: var(--teal);
-        }
+.section-title p {
+    width: min(100%, 650px);
+    margin: auto;
+    color: #607572;
+    font-size: clamp(16px, 2vw, 18px);
+}
 
 
-        /* =========================
-           HERO
-        ========================== */
+/* =========================
+   NAVIGATION
+========================== */
 
-        .hero {
-            min-height: 90vh;
-            padding: 0 8%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(248,243,232,0.98) 5%,
-                    rgba(248,243,232,0.75)
-                ),
-                url("church.png");
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(253, 252, 251, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
 
-            background-size: cover;
-            background-position: center;
-        }
+.navbar {
+    width: 100%;
+    min-height: 78px;
+    padding: 10px clamp(5%, 8vw, 10%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-        .hero-content {
-            max-width: 650px;
-            animation: fadeUp 1s ease;
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
 
-        .hero-content .small-title {
-            color: var(--teal);
-            font-size: 19px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
 
-        .hero-content h2 {
-            font-size: clamp(45px, 6vw, 75px);
-            line-height: 1.05;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
+.logo-text {
+    min-width: 0;
+}
 
-        .hero-content h2 span {
-            color: var(--teal);
-        }
+.logo-text h1 {
+    color: var(--teal);
+    font-size: clamp(18px, 2vw, 22px);
+    margin-bottom: -8px;
+    white-space: nowrap;
+}
 
-        .hero-content p {
-            font-size: 20px;
-            color: #526866;
-            margin-bottom: 30px;
-        }
+.logo-text span {
+    color: #64817d;
+    font-size: clamp(11px, 1.5vw, 13px);
+    white-space: nowrap;
+}
 
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: clamp(15px, 2vw, 25px);
+}
 
-        .btn {
-            padding: 13px 28px;
-            border-radius: 30px;
-            font-weight: bold;
-            border: 2px solid var(--teal);
-            transition: 0.3s;
-        }
+.nav-links a {
+    font-size: clamp(15px, 1.5vw, 17px);
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s ease;
+}
 
-        .btn-primary {
-            background: var(--teal);
-            color: white;
-        }
+.nav-links a:hover {
+    color: var(--teal);
+}
 
-        .btn-primary:hover {
-            background: var(--dark);
-            transform: translateY(-3px);
-        }
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: var(--green);
+    transition: 0.3s ease;
+}
 
-        .btn-outline {
-            color: var(--teal);
-        }
+.nav-links a:hover::after {
+    width: 100%;
+}
 
-        .btn-outline:hover {
-            background: var(--teal);
-            color: white;
-            transform: translateY(-3px);
-        }
+.menu-btn {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--teal);
+    user-select: none;
+}
+
+
+/* =========================
+   HERO
+========================== */
+
+.hero {
+    min-height: calc(100vh - 78px);
+    padding: clamp(50px, 8vw, 100px) clamp(5%, 8vw, 10%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: clamp(30px, 5vw, 70px);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(248, 243, 232, 0.98) 5%,
+            rgba(248, 243, 232, 0.75) 100%
+        ),
+        url("church.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    width: min(100%, 650px);
+    animation: fadeUp 1s ease;
+}
+
+.hero-content .small-title {
+    color: var(--teal);
+    font-size: clamp(15px, 2vw, 19px);
+    font-weight: bold;
+    letter-spacing: clamp(1px, 0.3vw, 2px);
+    margin-bottom: 15px;
+}
+
+.hero-content h2 {
+    font-size: clamp(42px, 6vw, 75px);
+    line-height: 1.05;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.hero-content h2 span {
+    color: var(--teal);
+}
+
+.hero-content p {
+    font-size: clamp(16px, 2vw, 20px);
+    color: #526866;
+    margin-bottom: 30px;
+    max-width: 620px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: 2px solid var(--teal);
+    transition: 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--teal);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--dark);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    color: var(--teal);
+}
+
+.btn-outline:hover {
+    background: var(--teal);
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   ANIMATION
+========================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   LARGE TABLETS
+========================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================
+   TABLETS
+========================== */
+
+@media (max-width: 850px) {
+
+    section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .logo-icon {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        font-size: 22px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: rgba(253, 252, 251, 0.98);
+        backdrop-filter: blur(10px);
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.4s ease;
+
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-links.active {
+        max-height: 500px;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 17px;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .hero {
+        min-height: calc(100vh - 70px);
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        background:
+            linear-gradient(
+                rgba(248, 243, 232, 0.88),
+                rgba(248, 243, 232, 0.95)
+            ),
+            url("church.png");
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-content {
+        margin: auto;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================== */
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .navbar {
+        padding: 8px 5%;
+        min-height: 65px;
+    }
+
+    .logo {
+        gap: 8px;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 20px;
+    }
+
+    .logo-text h1 {
+        font-size: 17px;
+        margin-bottom: -6px;
+    }
+
+    .logo-text span {
+        font-size: 10px;
+    }
+
+    .menu-btn {
+        font-size: 27px;
+    }
+
+    .hero {
+        min-height: calc(100vh - 65px);
+        padding: 60px 5%;
+    }
+
+    .hero-content .small-title {
+        margin-bottom: 10px;
+    }
+
+    .hero-content h2 {
+        font-size: clamp(38px, 12vw, 55px);
+        line-height: 1.08;
+        margin-bottom: 18px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn {
+        width: min(100%, 260px);
+        padding: 12px 22px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================== */
+
+@media (max-width: 400px) {
+
+    section {
+        padding: 50px 4%;
+    }
+
+    .navbar {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .logo-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 18px;
+    }
+
+    .logo-text h1 {
+        font-size: 15px;
+    }
+
+    .logo-text span {
+        font-size: 9px;
+    }
+
+    .hero {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 240px;
+    }
+}
 /* ========================================
    ABOUT / MISSION & VISION
 ======================================== */
